@@ -17,7 +17,7 @@ export default function Login() {
     }
     
     try {
-      const resp = await fetch(`http://localhost:5000${endpoint}`, {
+      const resp = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

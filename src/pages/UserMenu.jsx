@@ -11,7 +11,7 @@ export default function UserMenu() {
       navigate('/login');
       return;
     }
-    fetch(`http://localhost:5000/api/bookings?email=${user.email}`)
+    fetch(`/api/bookings?email=${user.email}`)
       .then(res => res.json())
       .then(d => setBookings(Array.isArray(d) ? d : []))
       .catch(err => console.error(err));

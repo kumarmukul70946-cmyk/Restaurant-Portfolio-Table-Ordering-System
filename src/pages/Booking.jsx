@@ -34,7 +34,7 @@ export default function Booking() {
       navigate('/login');
       return;
     }
-    fetch(`http://localhost:5000/api/restaurants/${id}`)
+    fetch(`/api/restaurants/${id}`)
       .then(res => res.json())
       .then(data => setRestaurant(data.data || data))
       .catch(err => console.error("Error", err));
@@ -45,7 +45,7 @@ export default function Booking() {
     setLoading(true);
 
     try {
-      const resp = await fetch('http://localhost:5000/api/bookings', {
+      const resp = await fetch('/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ restaurantId: id, ...formData })

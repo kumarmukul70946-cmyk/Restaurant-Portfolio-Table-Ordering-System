@@ -11,7 +11,7 @@ export default function Restaurants() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/restaurants')
+    fetch('/api/restaurants')
       .then(res => res.json())
       .then(data => {
         if (data.success && Array.isArray(data.data)) {

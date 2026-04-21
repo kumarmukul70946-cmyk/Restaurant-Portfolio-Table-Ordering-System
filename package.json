@@ -10,6 +10,7 @@
     "portfolio": "node node_modules/vite/bin/vite.js",
     "table-ordering": "cd client && node node_modules/vite/bin/vite.js",
     "dev": "node node_modules/concurrently/dist/bin/concurrently.js \"npm run server\" \"npm run portfolio\" \"npm run table-ordering\"",
+    "build": "npm run build:portfolio",
     "build:portfolio": "node node_modules/vite/bin/vite.js build",
     "build:table-ordering": "cd client && node node_modules/vite/bin/vite.js build",
     "start": "cd server && node src/index.js"
