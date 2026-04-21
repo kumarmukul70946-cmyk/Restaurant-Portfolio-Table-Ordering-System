@@ -1,0 +1,25 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#101214"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="994" cy="128" r="184" fill="#E2A56C" opacity="0.24"/>
+  <path d="M0 562C112 528 224 512 332 520C466 530 572 584 708 594C846 605 980 564 1200 476V760H0V562Z" fill="#17222B"/>
+  <rect x="194" y="208" width="812" height="290" rx="46" fill="#191E26"/>
+  <rect x="246" y="260" width="708" height="186" rx="28" fill="#EEF0F6"/>
+  <rect x="314" y="328" width="72" height="118" rx="16" fill="#2E3E58"/>
+  <rect x="430" y="298" width="92" height="148" rx="16" fill="#3D4F6D"/>
+  <rect x="574" y="278" width="96" height="168" rx="16" fill="#596B89"/>
+  <rect x="722" y="308" width="82" height="138" rx="16" fill="#415476"/>
+  <rect x="844" y="288" width="70" height="158" rx="16" fill="#72829A"/>
+  <path d="M286 476C362 432 428 414 516 414C610 414 666 434 752 472" stroke="#D19B62" stroke-width="22" stroke-linecap="round"/>
+  <path d="M470 520H730" stroke="#233343" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="876" cy="232" r="26" fill="#FFE4BC"/>
+  <rect x="82" y="80" width="274" height="90" rx="26" fill="#14181F" fill-opacity="0.92"/>
+  <text x="118" y="136" fill="#E7EDF7" font-size="40" font-family="Georgia, serif">Skyline Bistro</text>
+  <defs>
+    <linearGradient id="bg" x1="118" y1="56" x2="1078" y2="706" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202A36"/>
+      <stop offset="0.54" stop-color="#101214"/>
+      <stop offset="1" stop-color="#17212B"/>
+    </linearGradient>
+  </defs>
+</svg>

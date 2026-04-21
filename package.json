@@ -1,33 +1,33 @@
 {
-  "name": "app",
-  "private": true,
-  "version": "0.0.0",
+  "name": "restaurant-portfolio-table-ordering",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Full-stack MERN restaurant table ordering system with WhatsApp integration",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lucide-react": "^0.577.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1",
-    "socket.io-client": "^4.8.3"
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "server": "cd server && node src/index.js",
+    "portfolio": "node node_modules/vite/bin/vite.js",
+    "table-ordering": "cd client && node node_modules/vite/bin/vite.js",
+    "dev": "node node_modules/concurrently/dist/bin/concurrently.js \"npm run server\" \"npm run portfolio\" \"npm run table-ordering\"",
+    "build:portfolio": "node node_modules/vite/bin/vite.js build",
+    "build:table-ordering": "cd client && node node_modules/vite/bin/vite.js build",
+    "start": "cd server && node src/index.js"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@tailwindcss/postcss": "^4.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "autoprefixer": "^10.4.27",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.4.0",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^3.4.19",
-    "vite": "^8.0.1"
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.3",
+    "vite": "^8.0.9"
+  },
+  "dependencies": {
+    "lucide-react": "^1.8.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
+    "socket.io-client": "^4.8.3"
   }
 }

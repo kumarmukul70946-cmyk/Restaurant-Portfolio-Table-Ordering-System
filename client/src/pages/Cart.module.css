@@ -1,0 +1,160 @@
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.branchBadge {
+  display: inline-flex;
+  margin-bottom: 0.65rem;
+  padding: 0.36rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.12);
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  color: var(--accent);
+}
+
+.list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actions button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--surface-hover);
+  color: var(--text);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions button:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.qty {
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.remove {
+  margin-left: 0.5rem;
+  font-size: 0.8rem !important;
+  width: auto !important;
+  padding: 0 0.5rem !important;
+  color: var(--error);
+}
+
+.lineTotal {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary .line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.summary .lineTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+}
+
+.actionsBottom {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.secondary {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .lineTotal {
+    grid-column: 1;
+  }
+}

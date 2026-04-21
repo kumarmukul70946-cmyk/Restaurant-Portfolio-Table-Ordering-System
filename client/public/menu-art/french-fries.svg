@@ -1,0 +1,27 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#17100C"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="970" cy="142" r="174" fill="#D2853E" opacity="0.3"/>
+  <circle cx="188" cy="616" r="180" fill="#5E2D1D" opacity="0.48"/>
+  <ellipse cx="600" cy="425" rx="318" ry="88" fill="#100B08" opacity="0.24"/>
+  <path d="M459 304L744 304L689 550H512L459 304Z" fill="#C84A2F"/>
+  <path d="M485 330H719L681 519H523L485 330Z" fill="#E35A34"/>
+  <rect x="465" y="198" width="46" height="192" rx="20" transform="rotate(-12 465 198)" fill="#F3C66D"/>
+  <rect x="519" y="182" width="48" height="214" rx="20" transform="rotate(4 519 182)" fill="#F8D27C"/>
+  <rect x="577" y="168" width="48" height="228" rx="20" transform="rotate(-2 577 168)" fill="#F5C96F"/>
+  <rect x="635" y="184" width="46" height="210" rx="20" transform="rotate(6 635 184)" fill="#F9D683"/>
+  <rect x="694" y="212" width="42" height="182" rx="18" transform="rotate(12 694 212)" fill="#EFB95C"/>
+  <path d="M523 472C571 458 626 458 680 474" stroke="#FFB47A" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="512" cy="274" r="10" fill="#FFF3D3"/>
+  <circle cx="688" cy="286" r="8" fill="#FFF3D3"/>
+  <circle cx="753" cy="366" r="12" fill="#F3C66D" fill-opacity="0.65"/>
+  <rect x="84" y="82" width="240" height="88" rx="24" fill="#241713" fill-opacity="0.9"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="40" font-family="Georgia, serif">French Fries</text>
+  <defs>
+    <linearGradient id="bg" x1="126" y1="60" x2="1064" y2="696" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1C16"/>
+      <stop offset="0.54" stop-color="#17100C"/>
+      <stop offset="1" stop-color="#281711"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,31 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#13100E"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="968" cy="132" r="186" fill="#B57036" opacity="0.28"/>
+  <circle cx="176" cy="612" r="182" fill="#3D261C" opacity="0.5"/>
+  <rect x="244" y="180" width="712" height="368" rx="46" fill="#211814"/>
+  <rect x="292" y="228" width="616" height="272" rx="32" fill="#2C211D"/>
+  <rect x="326" y="262" width="548" height="204" rx="28" fill="#F4E5D0"/>
+  <rect x="360" y="292" width="140" height="110" rx="20" fill="#D7A75C"/>
+  <rect x="532" y="292" width="140" height="110" rx="20" fill="#D7A75C"/>
+  <rect x="704" y="292" width="140" height="110" rx="20" fill="#D7A75C"/>
+  <path d="M396 292V250" stroke="#F7E7C1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M568 292V250" stroke="#F7E7C1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M740 292V250" stroke="#F7E7C1" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="396" cy="238" r="20" fill="#F1C77A"/>
+  <circle cx="568" cy="238" r="20" fill="#F1C77A"/>
+  <circle cx="740" cy="238" r="20" fill="#F1C77A"/>
+  <path d="M410 514H790" stroke="#A77B54" stroke-width="24" stroke-linecap="round"/>
+  <path d="M476 514V586" stroke="#A77B54" stroke-width="20" stroke-linecap="round"/>
+  <path d="M724 514V586" stroke="#A77B54" stroke-width="20" stroke-linecap="round"/>
+  <path d="M300 594C403 548 515 524 600 524C685 524 797 548 900 594" stroke="#3B241B" stroke-width="26" stroke-linecap="round"/>
+  <rect x="82" y="80" width="330" height="90" rx="26" fill="#1D1512" fill-opacity="0.92"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="40" font-family="Georgia, serif">Restaurant Selection</text>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="54" x2="1072" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#281A15"/>
+      <stop offset="0.55" stop-color="#13100E"/>
+      <stop offset="1" stop-color="#1E1512"/>
+    </linearGradient>
+  </defs>
+</svg>

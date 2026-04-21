@@ -1,0 +1,26 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#150F0D"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="984" cy="138" r="176" fill="#D07B34" opacity="0.3"/>
+  <circle cx="194" cy="620" r="174" fill="#4D2D1F" opacity="0.48"/>
+  <rect x="232" y="176" width="736" height="384" rx="52" fill="#211612"/>
+  <rect x="282" y="226" width="636" height="284" rx="34" fill="#FAECD7"/>
+  <path d="M326 432C393 349 461 302 600 302C739 302 807 349 874 432" stroke="#C58A45" stroke-width="18" stroke-linecap="round"/>
+  <path d="M382 438C437 372 489 342 600 342C711 342 763 372 818 438" stroke="#E3BB79" stroke-width="18" stroke-linecap="round"/>
+  <path d="M464 258L500 472" stroke="#A26A40" stroke-width="18" stroke-linecap="round"/>
+  <path d="M736 258L700 472" stroke="#A26A40" stroke-width="18" stroke-linecap="round"/>
+  <path d="M600 240V476" stroke="#A26A40" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="430" cy="248" r="22" fill="#F0C975"/>
+  <circle cx="600" cy="228" r="26" fill="#F5D389"/>
+  <circle cx="770" cy="248" r="22" fill="#F0C975"/>
+  <rect x="360" y="514" width="480" height="38" rx="18" fill="#3B241B"/>
+  <rect x="82" y="80" width="272" height="90" rx="26" fill="#1D1512" fill-opacity="0.92"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="42" font-family="Georgia, serif">Saffron Court</text>
+  <defs>
+    <linearGradient id="bg" x1="116" y1="60" x2="1074" y2="706" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#311F17"/>
+      <stop offset="0.55" stop-color="#150F0D"/>
+      <stop offset="1" stop-color="#241510"/>
+    </linearGradient>
+  </defs>
+</svg>

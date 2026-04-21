@@ -1,0 +1,36 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#17100C"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="1002" cy="130" r="178" fill="#D47C35" opacity="0.28"/>
+  <circle cx="178" cy="614" r="168" fill="#5A2E1C" opacity="0.48"/>
+  <ellipse cx="600" cy="412" rx="320" ry="92" fill="#100B08" opacity="0.26"/>
+  <ellipse cx="600" cy="390" rx="286" ry="182" fill="#F0E5D5"/>
+  <ellipse cx="600" cy="390" rx="230" ry="138" fill="#FFFAF1"/>
+  <g stroke="#E4B160" stroke-width="24" stroke-linecap="round">
+    <path d="M474 383C486 344 528 321 567 330C605 338 632 372 625 410C619 445 589 474 551 478C515 482 479 463 467 430"/>
+    <path d="M520 335C566 304 642 319 678 369C706 408 701 462 660 488C618 515 556 507 520 473C485 439 487 365 520 335Z"/>
+    <path d="M602 331C649 314 703 333 735 376C764 416 759 476 718 505C676 535 611 530 571 493"/>
+  </g>
+  <g fill="#C24C30">
+    <circle cx="493" cy="372" r="24"/>
+    <circle cx="703" cy="402" r="25"/>
+    <circle cx="612" cy="455" r="22"/>
+    <circle cx="572" cy="341" r="17"/>
+  </g>
+  <g fill="#4D8541">
+    <circle cx="454" cy="430" r="14"/>
+    <circle cx="545" cy="429" r="14"/>
+    <circle cx="664" cy="349" r="14"/>
+    <circle cx="732" cy="445" r="14"/>
+  </g>
+  <path d="M416 308C448 286 496 279 539 290" stroke="#F3D59D" stroke-width="10" stroke-linecap="round"/>
+  <rect x="84" y="82" width="290" height="88" rx="24" fill="#231713" fill-opacity="0.9"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="38" font-family="Georgia, serif">Vegetable Pasta</text>
+  <defs>
+    <linearGradient id="bg" x1="118" y1="64" x2="1068" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A1B15"/>
+      <stop offset="0.54" stop-color="#17100C"/>
+      <stop offset="1" stop-color="#261712"/>
+    </linearGradient>
+  </defs>
+</svg>

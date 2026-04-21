@@ -3,12 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [isRegister, setIsRegister] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isRegister ? '/api/auth/register' : '/api/auth/login';
+    let endpoint = '';
+    if (isAdmin) {
+      endpoint = '/api/users/admin/login';
+    } else {
+      endpoint = isRegister ? '/api/users/register' : '/api/users/login';
+    }
     
     try {
       const resp = await fetch(`http://localhost:5000${endpoint}`, {
@@ -19,10 +25,11 @@ export default function Login() {
       const data = await resp.json();
       
       if (resp.ok) {
-        localStorage.setItem('user', JSON.stringify(data.user));
-        navigate('/');
+        localStorage.setItem('user', JSON.stringify(data.admin || data.user));
+        localStorage.setItem('token', data.token);
+        navigate(isAdmin ? '/admin' : '/user/menu');
       } else {
-        alert(data.error);
+        alert(data.message || data.error || 'Login failed');
       }
     } catch (err) {
       alert("Error occurred. Is backend running?");
@@ -35,11 +42,30 @@ export default function Login() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-600/5 rounded-full pointer-events-none"></div>
 
       <div className="w-full max-w-md bg-white/5 backdrop-blur-2xl p-10 rounded-3xl border border-white/10 shadow-2xl relative z-10">
+        <div className="flex mb-6 bg-black/40 p-1 rounded-xl">
+          <button
+            type="button"
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${!isAdmin ? 'bg-fuchsia-600/20 text-fuchsia-400' : 'text-neutral-400 hover:text-white'}`}
+            onClick={() => { setIsAdmin(false); setIsRegister(false); }}
+          >
+            User
+          </button>
+          <button
+            type="button"
+            className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${isAdmin ? 'bg-indigo-600/20 text-indigo-400' : 'text-neutral-400 hover:text-white'}`}
+            onClick={() => { setIsAdmin(true); setIsRegister(false); }}
+          >
+            Admin
+          </button>
+        </div>
+
         <h2 className="text-3xl font-black mb-2 text-white">
-          {isRegister ? "Create Account" : "Welcome Back"}
+          {isAdmin ? "Admin Login" : (isRegister ? "Create Account" : "Welcome Back")}
         </h2>
         <p className="text-neutral-400 text-sm mb-8">
-          {isRegister ? "Sign up to start booking premium tables." : "Log in to view your bookings or manage settings."}
+          {isAdmin 
+            ? "Log in to access the admin dashboard." 
+            : (isRegister ? "Sign up to start booking premium tables." : "Log in to view your bookings or manage settings.")}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -80,16 +106,18 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-center text-sm text-neutral-400 mt-6">
-          {isRegister ? "Already have an account?" : "Don't have an account?"}{' '}
-          <button 
-            type="button" 
-            onClick={() => setIsRegister(!isRegister)} 
-            className="text-fuchsia-400 hover:text-white transition-colors font-medium border-b border-transparent hover:border-white"
-          >
-            {isRegister ? "Log In" : "Register"}
-          </button>
-        </p>
+        {!isAdmin && (
+          <p className="text-center text-sm text-neutral-400 mt-6">
+            {isRegister ? "Already have an account?" : "Don't have an account?"}{' '}
+            <button 
+              type="button" 
+              onClick={() => setIsRegister(!isRegister)} 
+              className="text-fuchsia-400 hover:text-white transition-colors font-medium border-b border-transparent hover:border-white"
+            >
+              {isRegister ? "Log In" : "Register"}
+            </button>
+          </p>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,24 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#111415"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="986" cy="126" r="182" fill="#E28641" opacity="0.26"/>
+  <path d="M0 490C138 454 247 442 360 460C474 478 572 522 676 534C808 550 934 512 1200 430V760H0V490Z" fill="#1A3236"/>
+  <path d="M0 546C168 512 269 503 388 518C500 532 613 584 719 596C849 610 972 581 1200 506V760H0V546Z" fill="#112325"/>
+  <rect x="252" y="192" width="696" height="318" rx="48" fill="#1C2224"/>
+  <rect x="302" y="240" width="596" height="220" rx="30" fill="#E8F0F0"/>
+  <path d="M372 460L470 320L554 460" stroke="#FFB067" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M548 460L648 284L742 460" stroke="#FF8748" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M734 460L820 334L884 460" stroke="#FFB067" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="460" cy="304" r="18" fill="#FFF0D7"/>
+  <circle cx="648" cy="266" r="18" fill="#FFF0D7"/>
+  <circle cx="818" cy="318" r="18" fill="#FFF0D7"/>
+  <rect x="82" y="80" width="252" height="90" rx="26" fill="#162021" fill-opacity="0.92"/>
+  <text x="118" y="136" fill="#E5F0EF" font-size="40" font-family="Georgia, serif">Harbor Flame</text>
+  <defs>
+    <linearGradient id="bg" x1="116" y1="62" x2="1082" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2C2F"/>
+      <stop offset="0.52" stop-color="#111415"/>
+      <stop offset="1" stop-color="#142224"/>
+    </linearGradient>
+  </defs>
+</svg>

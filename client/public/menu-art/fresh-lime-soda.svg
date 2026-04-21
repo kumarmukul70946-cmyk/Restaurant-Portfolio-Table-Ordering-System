@@ -1,0 +1,37 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#0F1614"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="990" cy="134" r="180" fill="#A9D85A" opacity="0.24"/>
+  <circle cx="212" cy="608" r="172" fill="#1E3A33" opacity="0.58"/>
+  <ellipse cx="600" cy="422" rx="320" ry="88" fill="#09100E" opacity="0.26"/>
+  <rect x="490" y="210" width="220" height="360" rx="72" fill="#E9FBF3" fill-opacity="0.22" stroke="#D6F5E8" stroke-width="8"/>
+  <rect x="518" y="242" width="164" height="286" rx="54" fill="url(#drink)"/>
+  <path d="M622 176L690 274" stroke="#F4F0D8" stroke-width="16" stroke-linecap="round"/>
+  <path d="M555 274H643" stroke="#F7F2DE" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="578" cy="333" r="17" fill="#F7FFF8" fill-opacity="0.6"/>
+  <circle cx="622" cy="402" r="11" fill="#F7FFF8" fill-opacity="0.5"/>
+  <circle cx="568" cy="447" r="9" fill="#F7FFF8" fill-opacity="0.5"/>
+  <circle cx="635" cy="476" r="14" fill="#F7FFF8" fill-opacity="0.5"/>
+  <circle cx="697" cy="243" r="74" fill="#C9F076"/>
+  <circle cx="697" cy="243" r="56" fill="#E7FFAB"/>
+  <path d="M697 189V297" stroke="#87B840" stroke-width="8"/>
+  <path d="M643 243H751" stroke="#87B840" stroke-width="8"/>
+  <path d="M657 207L737 279" stroke="#87B840" stroke-width="8"/>
+  <path d="M737 207L657 279" stroke="#87B840" stroke-width="8"/>
+  <circle cx="462" cy="320" r="14" fill="#BDEB89" fill-opacity="0.55"/>
+  <circle cx="770" cy="384" r="10" fill="#BDEB89" fill-opacity="0.45"/>
+  <rect x="84" y="82" width="312" height="88" rx="24" fill="#13201C" fill-opacity="0.9"/>
+  <text x="118" y="136" fill="#EAF7D0" font-size="38" font-family="Georgia, serif">Fresh Lime Soda</text>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1066" y2="698" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17312B"/>
+      <stop offset="0.54" stop-color="#0F1614"/>
+      <stop offset="1" stop-color="#162A24"/>
+    </linearGradient>
+    <linearGradient id="drink" x1="600" y1="242" x2="600" y2="528" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8F48E"/>
+      <stop offset="0.5" stop-color="#93D856"/>
+      <stop offset="1" stop-color="#4F9E42"/>
+    </linearGradient>
+  </defs>
+</svg>

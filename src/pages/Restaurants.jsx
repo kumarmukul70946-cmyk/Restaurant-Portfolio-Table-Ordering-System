@@ -3,15 +3,30 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Restaurants() {
   const [restaurants, setRestaurants] = useState([]);
-  const [filterDiet, setFilterDiet] = useState('All'); // 'All', 'Veg', 'Non-Veg'
-  const [sortPrice, setSortPrice] = useState('Default'); // 'Default', 'Low to High', 'High to Low'
+  const [filterDiet, setFilterDiet] = useState('All'); 
+  const [filterCuisine, setFilterCuisine] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortPrice, setSortPrice] = useState('Default'); 
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:5000/api/restaurants')
       .then(res => res.json())
-      .then(data => setRestaurants(data))
-      .catch(err => console.error("Error fetching restaurants", err));
+      .then(data => {
+        if (data.success && Array.isArray(data.data)) {
+          setRestaurants(data.data);
+        } else if (Array.isArray(data)) {
+          setRestaurants(data);
+        } else {
+          setRestaurants([]);
+          setError("Invalid data format received");
+        }
+      })
+      .catch(err => {
+        console.error("Error fetching restaurants", err);
+        setError("Failed to connect to server");
+      });
   }, []);
 
   // Compute filtered and sorted restaurants
@@ -21,12 +36,26 @@ export default function Restaurants() {
     processedRestaurants = processedRestaurants.filter(r => r.diet === filterDiet);
   }
 
+  if (filterCuisine !== 'All') {
+    processedRestaurants = processedRestaurants.filter(r => 
+      (r.cuisineTags && r.cuisineTags.some(tag => tag.includes(filterCuisine))) || 
+      (r.cuisine && r.cuisine.includes(filterCuisine))
+    );
+  }
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    processedRestaurants = processedRestaurants.filter(r => 
+      r.name.toLowerCase().includes(q) || 
+      (r.cuisineTags && r.cuisineTags.some(tag => tag.toLowerCase().includes(q))) ||
+      (r.description && r.description.toLowerCase().includes(q))
+    );
+  }
+
   if (sortPrice !== 'Default') {
     processedRestaurants.sort((a, b) => {
-      // Extract numeric value from "₹4000"
-      const priceA = parseInt(a.priceForTwo.replace(/\D/g, '')) || 0;
-      const priceB = parseInt(b.priceForTwo.replace(/\D/g, '')) || 0;
-      
+      const priceA = parseInt((a.priceForTwo || "₹2000").replace(/\D/g, '')) || 0;
+      const priceB = parseInt((b.priceForTwo || "₹2000").replace(/\D/g, '')) || 0;
       return sortPrice === 'Low to High' ? priceA - priceB : priceB - priceA;
     });
   }
@@ -56,33 +85,66 @@ export default function Restaurants() {
       {/* Grid Section */}
       <div className="max-w-7xl mx-auto px-6 pb-32 relative z-10">
         
+        {/* Search Bar */}
+        <div className="relative mb-8 max-w-2xl mx-auto">
+          <input 
+            type="text" 
+            placeholder="Search restaurants, cuisines, or locations..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-white/5 border border-white/10 backdrop-blur-xl py-4 px-12 rounded-2xl outline-none focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 transition-all text-lg"
+          />
+          <svg className="w-6 h-6 absolute left-4 top-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        
         {/* Filters and Sorting Controls */}
-        <div className="flex flex-col md:flex-row justify-between items-center bg-white/5 border border-white/10 backdrop-blur-md p-4 rounded-2xl mb-10 gap-4">
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Show:</span>
-            <div className="flex bg-black/40 p-1 rounded-xl">
-              {['All', 'Veg', 'Non-Veg'].map(type => (
-                <button
-                  key={type}
-                  onClick={() => setFilterDiet(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filterDiet === type ? 'bg-fuchsia-500 text-white shadow-lg' : 'text-neutral-400 hover:text-white'}`}
-                >
-                  {type}
-                </button>
-              ))}
+        <div className="flex flex-col lg:flex-row justify-between items-center bg-white/5 border border-white/10 backdrop-blur-md p-4 rounded-2xl mb-10 gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Diet:</span>
+              <div className="flex bg-black/40 p-1 rounded-xl">
+                {['All', 'Veg', 'Non-Veg'].map(type => (
+                  <button
+                    key={type}
+                    onClick={() => setFilterDiet(type)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filterDiet === type ? 'bg-fuchsia-500 text-white shadow-lg' : 'text-neutral-400 hover:text-white'}`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Cuisine:</span>
+              <select 
+                value={filterCuisine}
+                onChange={(e) => setFilterCuisine(e.target.value)}
+                className="bg-black/40 border border-white/10 text-white text-sm rounded-xl px-4 py-2.5 outline-none focus:border-fuchsia-500 transition-all cursor-pointer min-w-[140px]"
+              >
+                <option value="All">All Cuisines</option>
+                <option value="Indian">Indian</option>
+                <option value="North Indian">North Indian</option>
+                <option value="South Indian">South Indian</option>
+                <option value="Seafood">Seafood</option>
+                <option value="Continental">Continental</option>
+                <option value="Italian">Italian</option>
+              </select>
             </div>
           </div>
           
-          <div className="flex items-center gap-3 w-full md:w-auto">
-            <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Sort by Price:</span>
+          <div className="flex items-center gap-3 w-full lg:w-auto">
+            <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Sort:</span>
             <select 
               value={sortPrice}
               onChange={(e) => setSortPrice(e.target.value)}
-              className="bg-black/40 border border-white/10 text-white text-sm rounded-xl px-4 py-2.5 outline-none focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 transition-all cursor-pointer min-w-[160px]"
+              className="bg-black/40 border border-white/10 text-white text-sm rounded-xl px-4 py-2.5 outline-none focus:border-fuchsia-500 transition-all cursor-pointer flex-1 lg:min-w-[160px]"
             >
               <option value="Default">Default</option>
-              <option value="Low to High">Low to High (₹)</option>
-              <option value="High to Low">High to Low (₹)</option>
+              <option value="Low to High">Price: Low to High</option>
+              <option value="High to Low">Price: High to Low</option>
             </select>
           </div>
         </div>
@@ -98,7 +160,7 @@ export default function Restaurants() {
                 <img 
                   loading="lazy"
                   decoding="async"
-                  src={r.image?.includes('unsplash.com') ? `${r.image}?auto=format&fit=crop&w=800&q=80` : (r.image || "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")} 
+                  src={(r.image?.url || r.image)?.includes('unsplash.com') ? `${r.image?.url || r.image}?auto=format&fit=crop&w=800&q=80` : ((r.image?.url || r.image) || "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")} 
                   alt={r.name} 
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" }}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-out bg-neutral-900"
@@ -106,7 +168,7 @@ export default function Restaurants() {
                 />
                 <div className="absolute top-4 left-4 z-20 flex gap-2">
                   <span className="bg-black/50 backdrop-blur-md border border-white/10 text-xs px-3 py-1.5 rounded-full font-medium tracking-wide">
-                    {r.city}
+                    {r.city || r.location?.split(',')[0] || 'City'}
                   </span>
                   {r.diet && r.diet !== 'Both' && (
                     <span className={`backdrop-blur-md border border-white/10 text-xs px-3 py-1.5 rounded-full font-bold tracking-wide ${r.diet === 'Veg' ? 'bg-emerald-500/80 text-white' : 'bg-rose-500/80 text-white'}`}>
@@ -120,12 +182,12 @@ export default function Restaurants() {
                 <div className="bg-[#121216] border border-white/10 p-4 rounded-2xl shadow-xl flex justify-between items-center mb-6">
                   <div>
                     <p className="text-xs text-neutral-400 uppercase tracking-wider mb-1">Cuisine</p>
-                    <p className="font-semibold text-fuchsia-300 text-sm truncate w-32">{r.cuisine}</p>
+                    <p className="font-semibold text-fuchsia-300 text-sm truncate w-32">{r.cuisine || r.cuisineTags?.[0] || 'Various'}</p>
                   </div>
                   <div className="w-px h-8 bg-white/10"></div>
                   <div className="text-right">
                     <p className="text-xs text-neutral-400 uppercase tracking-wider mb-1">Cost for Two</p>
-                    <p className="font-semibold text-white text-sm">{r.priceForTwo}</p>
+                    <p className="font-semibold text-white text-sm">{r.priceForTwo || '₹2000'}</p>
                   </div>
                 </div>
 
@@ -162,13 +224,28 @@ export default function Restaurants() {
           ))}
         </div>
         
-        {restaurants.length === 0 && (
+        {error && (
+          <div className="flex flex-col items-center justify-center p-20 text-rose-400">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p className="text-xl font-medium">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="mt-6 px-6 py-2 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-all"
+            >
+              Try Again
+            </button>
+          </div>
+        )}
+
+        {!error && restaurants.length === 0 && (
           <div className="flex items-center justify-center p-20">
             <div className="w-8 h-8 rounded-full border-t-2 border-r-2 border-fuchsia-500 animate-spin"></div>
           </div>
         )}
 
-        {restaurants.length > 0 && processedRestaurants.length === 0 && (
+        {!error && restaurants.length > 0 && processedRestaurants.length === 0 && (
           <div className="flex flex-col items-center justify-center p-20 text-neutral-400">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />

@@ -1,0 +1,28 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#160F0B"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="1014" cy="124" r="170" fill="#B85A25" opacity="0.3"/>
+  <circle cx="210" cy="630" r="176" fill="#553022" opacity="0.44"/>
+  <ellipse cx="600" cy="410" rx="330" ry="96" fill="#100B09" opacity="0.26"/>
+  <ellipse cx="600" cy="386" rx="298" ry="190" fill="#F1E6D6"/>
+  <ellipse cx="600" cy="386" rx="238" ry="144" fill="#FFFAF1"/>
+  <path d="M512 302C466 332 446 390 470 438C492 484 548 508 596 496C650 481 685 431 681 379C676 318 613 274 512 302Z" fill="#D37A35"/>
+  <path d="M531 324C498 345 486 392 506 425C522 453 559 465 593 456C633 445 659 410 656 373C652 326 606 294 531 324Z" fill="#E9A35A"/>
+  <path d="M649 348C699 330 747 350 771 391C791 426 790 470 771 500C752 529 720 549 687 549C649 549 621 517 621 478C621 430 613 362 649 348Z" fill="#C55C2E"/>
+  <path d="M652 369C683 357 714 371 731 398C745 421 746 450 733 472C719 494 696 509 672 509C645 509 625 486 625 458C625 424 628 378 652 369Z" fill="#E18947"/>
+  <path d="M770 505C818 479 854 499 857 539C860 579 823 612 780 604C741 596 731 547 770 505Z" fill="#F6C998"/>
+  <path d="M404 488C455 454 517 468 555 505" stroke="#6F9E4B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M423 529C459 500 496 499 535 516" stroke="#8AB663" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="435" cy="343" r="18" fill="#4B7E3E"/>
+  <circle cx="472" cy="319" r="13" fill="#5C964B"/>
+  <circle cx="698" cy="295" r="15" fill="#5C964B"/>
+  <rect x="84" y="82" width="286" height="88" rx="24" fill="#211713" fill-opacity="0.9"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="38" font-family="Georgia, serif">Grilled Chicken</text>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="58" x2="1064" y2="702" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E1E17"/>
+      <stop offset="0.54" stop-color="#160F0B"/>
+      <stop offset="1" stop-color="#24140F"/>
+    </linearGradient>
+  </defs>
+</svg>

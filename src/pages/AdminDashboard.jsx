@@ -6,7 +6,10 @@ export default function AdminDashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/dashboard')
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:5000/api/admin/dashboard', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
       .then(res => res.json())
       .then(d => setData(d))
       .catch(err => console.error(err));
@@ -79,9 +82,13 @@ export default function AdminDashboard() {
               const payload = Object.fromEntries(formData.entries());
               
               try {
+                const token = localStorage.getItem('token');
                 const res = await fetch('http://localhost:5000/api/admin/restaurant', {
                   method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
+                  headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                  },
                   body: JSON.stringify(payload)
                 });
                 
@@ -89,7 +96,7 @@ export default function AdminDashboard() {
                   alert('Restaurant Successfully Added!');
                   e.target.reset();
                   // Refresh metrics
-                  fetch('http://localhost:5000/api/admin/dashboard')
+                  fetch('http://localhost:5000/api/admin/dashboard', { headers: { 'Authorization': `Bearer ${token}` } })
                     .then(res => res.json())
                     .then(d => setData(d));
                 } else {

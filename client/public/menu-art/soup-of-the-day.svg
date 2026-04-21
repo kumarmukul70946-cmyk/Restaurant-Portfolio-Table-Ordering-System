@@ -1,0 +1,27 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#180F0C"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="180" fill="#E59B58" opacity="0.28"/>
+  <circle cx="170" cy="620" r="150" fill="#7E3B21" opacity="0.45"/>
+  <ellipse cx="600" cy="455" rx="310" ry="70" fill="#100B09" opacity="0.3"/>
+  <path d="M360 420C360 300 468 214 600 214C732 214 840 300 840 420V445C840 526 778 590 702 590H498C422 590 360 526 360 445V420Z" fill="#EEE4D6"/>
+  <path d="M404 408C404 324 491 256 600 256C709 256 796 324 796 408V424C796 473 757 512 708 512H492C443 512 404 473 404 424V408Z" fill="#FFF8ED"/>
+  <ellipse cx="600" cy="392" rx="192" ry="106" fill="#D88A3D"/>
+  <ellipse cx="600" cy="390" rx="170" ry="88" fill="#C8642D"/>
+  <path d="M491 398C520 356 584 329 647 343C706 355 745 407 716 444C686 481 607 495 543 476C476 455 458 445 491 398Z" fill="#ECAA64"/>
+  <path d="M547 377C583 334 643 331 677 371" stroke="#F4D7A6" stroke-width="15" stroke-linecap="round"/>
+  <path d="M524 300C511 276 517 241 541 222" stroke="#E2B67E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M607 286C604 255 620 224 649 207" stroke="#E2B67E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M684 303C688 274 710 248 739 239" stroke="#E2B67E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M582 366C591 349 616 345 632 356" stroke="#4A7A3B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M582 366C566 357 562 333 574 319" stroke="#5F914A" stroke-width="12" stroke-linecap="round"/>
+  <rect x="84" y="82" width="284" height="88" rx="24" fill="#241712" fill-opacity="0.9"/>
+  <text x="118" y="136" fill="#F7DFC0" font-size="38" font-family="Georgia, serif">Soup of the Day</text>
+  <defs>
+    <linearGradient id="bg" x1="100" y1="68" x2="1064" y2="708" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#291914"/>
+      <stop offset="0.55" stop-color="#180F0C"/>
+      <stop offset="1" stop-color="#23120E"/>
+    </linearGradient>
+  </defs>
+</svg>

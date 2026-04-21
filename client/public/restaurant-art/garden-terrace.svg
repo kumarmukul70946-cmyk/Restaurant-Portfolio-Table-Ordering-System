@@ -1,0 +1,26 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#11140F"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="984" cy="118" r="178" fill="#9BC45C" opacity="0.24"/>
+  <circle cx="212" cy="622" r="176" fill="#23422E" opacity="0.46"/>
+  <rect x="220" y="186" width="760" height="344" rx="54" fill="#1A241D"/>
+  <rect x="272" y="238" width="656" height="240" rx="34" fill="#EEF3E8"/>
+  <circle cx="418" cy="358" r="54" fill="#CDE790"/>
+  <circle cx="588" cy="330" r="54" fill="#B5DB69"/>
+  <circle cx="770" cy="364" r="54" fill="#D5EEA6"/>
+  <path d="M418 414V494" stroke="#6D9E43" stroke-width="14" stroke-linecap="round"/>
+  <path d="M588 384V494" stroke="#6D9E43" stroke-width="14" stroke-linecap="round"/>
+  <path d="M770 418V494" stroke="#6D9E43" stroke-width="14" stroke-linecap="round"/>
+  <path d="M362 540C441 508 506 496 600 496C694 496 759 508 838 540" stroke="#2F4C36" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="316" cy="272" r="18" fill="#F8FFE3"/>
+  <circle cx="866" cy="272" r="18" fill="#F8FFE3"/>
+  <rect x="82" y="80" width="272" height="90" rx="26" fill="#14201A" fill-opacity="0.92"/>
+  <text x="118" y="136" fill="#E6F4D8" font-size="40" font-family="Georgia, serif">Garden Terrace</text>
+  <defs>
+    <linearGradient id="bg" x1="114" y1="54" x2="1076" y2="706" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3427"/>
+      <stop offset="0.54" stop-color="#11140F"/>
+      <stop offset="1" stop-color="#18261C"/>
+    </linearGradient>
+  </defs>
+</svg>

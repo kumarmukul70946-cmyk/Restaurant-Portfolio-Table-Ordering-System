@@ -1,0 +1,84 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  margin-bottom: 1rem;
+}
+
+.branchBadge {
+  display: inline-flex;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.12);
+  color: var(--accent);
+  font-size: 0.8rem;
+  margin-bottom: 0.65rem;
+}
+
+.title {
+  font-size: 1.65rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.search::placeholder {
+  color: var(--text-muted);
+}
+
+.select {
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  color: var(--text);
+  min-width: 140px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.center,
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cartBtn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.cartBtn:hover {
+  background: var(--accent-hover);
+}

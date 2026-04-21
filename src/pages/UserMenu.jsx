@@ -11,7 +11,7 @@ export default function UserMenu() {
       navigate('/login');
       return;
     }
-    fetch(`http://localhost:5000/api/user/bookings?email=${user.email}`)
+    fetch(`http://localhost:5000/api/bookings?email=${user.email}`)
       .then(res => res.json())
       .then(d => setBookings(Array.isArray(d) ? d : []))
       .catch(err => console.error(err));
@@ -70,8 +70,7 @@ export default function UserMenu() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent z-10"></div>
                   <img 
                     loading="lazy"
-                    decoding="async"
-                    src={b.restaurantId?.image?.includes('unsplash.com') ? `${b.restaurantId.image}?auto=format&fit=crop&w=400&q=80` : (b.restaurantId?.image || "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")} 
+                    src={(b.restaurantId?.image?.url || b.restaurantId?.image)?.includes('unsplash.com') ? `${(b.restaurantId?.image?.url || b.restaurantId?.image)}?auto=format&fit=crop&w=400&q=80` : ((b.restaurantId?.image?.url || b.restaurantId?.image) || "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4")} 
                     onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" }}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                     alt="restaurant" 

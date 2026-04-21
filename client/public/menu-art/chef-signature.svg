@@ -1,0 +1,29 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#16110E"/>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="170" fill="url(#glow)" opacity="0.55"/>
+  <circle cx="230" cy="650" r="220" fill="#5E2D17" opacity="0.5"/>
+  <ellipse cx="600" cy="390" rx="290" ry="202" fill="#F2E7D3"/>
+  <ellipse cx="600" cy="390" rx="234" ry="154" fill="#FFF9F0"/>
+  <ellipse cx="600" cy="390" rx="172" ry="102" fill="#E2C18F"/>
+  <path d="M520 340C555 308 644 308 680 340C715 372 714 430 677 457C641 483 560 483 524 456C487 429 486 372 520 340Z" fill="#C96E2A"/>
+  <path d="M531 379C570 350 628 349 667 379" stroke="#F7D29B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M437 275L403 497" stroke="#D8C6AB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M763 275L797 497" stroke="#D8C6AB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M824 243C856 280 879 331 879 390C879 449 856 500 824 537" stroke="#D8C6AB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M375 243C343 280 320 331 320 390C320 449 343 500 375 537" stroke="#D8C6AB" stroke-width="18" stroke-linecap="round"/>
+  <rect x="86" y="570" width="398" height="118" rx="28" fill="#201814" fill-opacity="0.92"/>
+  <text x="122" y="618" fill="#F8E2C1" font-size="42" font-family="Georgia, serif">Chef's Signature</text>
+  <text x="122" y="658" fill="#D0B58D" font-size="26" font-family="Arial, sans-serif">Elegant artwork appears when no photo is uploaded</text>
+  <defs>
+    <linearGradient id="bg" x1="102" y1="64" x2="1072" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1C16"/>
+      <stop offset="0.52" stop-color="#16110E"/>
+      <stop offset="1" stop-color="#1D130F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 120) rotate(90) scale(170)">
+      <stop stop-color="#C26A2D"/>
+      <stop offset="1" stop-color="#C26A2D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

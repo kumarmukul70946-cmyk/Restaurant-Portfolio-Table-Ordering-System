@@ -1,0 +1,83 @@
+:root {
+  --bg: #090b0d;
+  --surface: rgba(18, 22, 28, 0.86);
+  --surface-hover: rgba(28, 33, 40, 0.9);
+  --text: #f6f1e8;
+  --text-soft: #b9b1a4;
+  --text-muted: #8e887d;
+  --accent: #d7ba77;
+  --accent-hover: #ecd29a;
+  --success: #2d8a5e;
+  --error: #c94a4a;
+  --radius: 18px;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(128, 92, 37, 0.18), transparent 24%),
+    radial-gradient(circle at top right, rgba(43, 62, 92, 0.2), transparent 26%),
+    linear-gradient(180deg, #0b0e12 0%, #090b0d 42%, #0c0e11 100%);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 82%);
+  opacity: 0.16;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  background: rgba(215, 186, 119, 0.28);
+  color: var(--text);
+}

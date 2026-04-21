@@ -1,0 +1,321 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: min(1440px, calc(100% - 24px));
+  margin: 1rem auto 0;
+  padding: 1.2rem 1.3rem;
+  background:
+    linear-gradient(135deg, rgba(12, 16, 22, 0.92), rgba(26, 20, 15, 0.88)),
+    rgba(11, 13, 17, 0.8);
+  border: 1px solid rgba(214, 186, 119, 0.16);
+  border-radius: 28px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px);
+  position: sticky;
+  top: 1rem;
+  z-index: 120;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: auto -10% -60% 28%;
+  height: 200px;
+  background: radial-gradient(circle, rgba(214, 186, 119, 0.16), rgba(214, 186, 119, 0));
+  pointer-events: none;
+}
+
+.brandColumn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 300px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  color: var(--text);
+}
+
+.logoMark {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(216, 190, 128, 0.92), rgba(140, 105, 42, 0.92));
+  color: #17120e;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.66rem;
+  color: rgba(240, 228, 198, 0.72);
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  line-height: 0.95;
+  color: var(--text);
+}
+
+.brandNote {
+  color: var(--text-soft);
+  font-size: 0.93rem;
+  max-width: 28ch;
+}
+
+.headerBody {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding: 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.navLink:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.navLinkActive {
+  color: #17120e;
+  background: linear-gradient(145deg, rgba(222, 197, 136, 0.96), rgba(183, 139, 61, 0.9));
+  box-shadow: 0 12px 24px rgba(176, 128, 48, 0.22);
+}
+
+.badge {
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: rgba(11, 13, 17, 0.88);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.utilityBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.infoCard,
+.profileCard {
+  min-height: 4.2rem;
+  padding: 0.85rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infoCard {
+  min-width: 200px;
+}
+
+.infoCardAccent {
+  background:
+    linear-gradient(145deg, rgba(204, 161, 69, 0.18), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.04);
+  border-color: rgba(214, 186, 119, 0.2);
+}
+
+.infoLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.63rem;
+  color: rgba(240, 228, 198, 0.56);
+}
+
+.infoCard strong,
+.profileText strong {
+  font-size: 0.98rem;
+  margin-top: 0.18rem;
+}
+
+.infoMeta {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  margin-top: 0.16rem;
+}
+
+.profileCard {
+  min-width: 210px;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(12, 15, 18, 0.8);
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoutBtn {
+  align-self: stretch;
+  padding: 0 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: color 0.24s ease, border-color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+}
+
+.logoutBtn:hover {
+  color: var(--text);
+  border-color: rgba(214, 186, 119, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.main {
+  width: min(1440px, calc(100% - 24px));
+  margin: 1.6rem auto 0;
+}
+
+@media (max-width: 1120px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .brandColumn,
+  .headerBody {
+    max-width: none;
+    width: 100%;
+  }
+
+  .headerBody {
+    align-items: stretch;
+  }
+
+  .nav,
+  .utilityBar {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    width: min(100% - 16px, 1440px);
+    padding: 1rem;
+    top: 0.5rem;
+  }
+
+  .logoName {
+    font-size: 1.8rem;
+  }
+
+  .nav {
+    border-radius: 24px;
+  }
+
+  .navLink {
+    padding: 0.68rem 0.88rem;
+  }
+
+  .infoCard,
+  .profileCard,
+  .logoutBtn {
+    width: 100%;
+  }
+
+  .profileCard {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding-bottom: 1.5rem;
+  }
+
+  .brandNote {
+    max-width: none;
+  }
+
+  .main {
+    width: min(100% - 16px, 1440px);
+    margin-top: 1rem;
+  }
+}
