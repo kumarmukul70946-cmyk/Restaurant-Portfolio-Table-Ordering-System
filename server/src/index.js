@@ -15,7 +15,11 @@ import tableRoutes from './routes/tableRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 
 dotenv.config();
-connectDB();
+
+// Connect to Database but don't let it crash the process in production
+connectDB().catch(err => {
+  console.error('Initial DB Connection failed:', err.message);
+});
 
 const app = express();
 
