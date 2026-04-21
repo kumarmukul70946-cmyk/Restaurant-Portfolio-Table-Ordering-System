@@ -70,7 +70,7 @@ npm run dev
 
 | Home Page | Booking Flow |
 | :---: | :---: |
-| ![Home](https://raw.githubusercontent.com/kumarmukul70946-cmyk/Restaurant-Portfolio-Table-Ordering-System/main/WhatsApp%20Image%202026-04-21%20at%2013.34.33.jpeg) | ![Booking](https://raw.githubusercontent.com/kumarmukul70946-cmyk/Restaurant-Portfolio-Table-Ordering-System/main/WhatsApp%20Image%202026-04-21%20at%2013.34.33.jpeg) |
+| ![Home](zaika_home.png) | ![Booking](zaika_booking.png) |
 
 ---
 
